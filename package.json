@@ -1,0 +1,24 @@
+{
+  "name": "@runnerty/executor-twitter",
+  "version": "1.0.0",
+  "description": "Runnerty module: twitter executor",
+  "author": "Coderty",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runnerty/executor-twitter.git"
+  },
+  "keywords": [
+    "runnerty",
+    "executor",
+    "twitter"
+  ],
+  "bugs": {
+    "url": "https://github.com/runnerty/executor-twitter/issues"
+  },
+  "homepage": "https://github.com/runnerty/executor-twitter#readme",
+  "dependencies": {
+    "twit": "^2.2.9"
+  }
+}

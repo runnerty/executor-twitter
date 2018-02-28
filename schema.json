@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "@runnerty-executor-twitter",
+  "definitions": {
+    "config": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "consumerKey",
+        "consumerSecret",
+        "accessToken",
+        "accessTokenSecret"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "@runnerty-executor-twitter"
+        },
+        "consumerKey": {
+          "type": "string"
+        },
+        "consumerSecret": {
+          "type": "string"
+        },
+        "accessToken": {
+          "type": "string"
+        },
+        "accessTokenSecret": {
+          "type": "string"
+        },
+        "timeoutMs":{
+          "type": "number"
+        }
+      }
+    },
+    "params": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "command",
+            "status"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "command": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "command",
+            "query"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "command": {
+              "type": "string"
+            },
+            "query": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "command",
+            "screen_name"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "command": {
+              "type": "string"
+            },
+            "screen_name": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "command",
+            "tweet_id"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "command": {
+              "type": "string"
+            },
+            "tweet_id": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "command",
+            "tweet_id"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "command": {
+              "type": "string"
+            },
+            "screen_name": {
+              "type": "string"
+            },
+            "textToSend": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
