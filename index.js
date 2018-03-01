@@ -17,7 +17,7 @@ class twitterExecutor extends Execution {
       consumer_secret:      params.consumerSecret,
       access_token:         params.accessToken,
       access_token_secret:  params.accessTokenSecret,
-      timeout_ms:           params.timeout
+      timeout_ms:           params.timeoutMs
     });
 
     let command = params.command;
