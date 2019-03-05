@@ -57,8 +57,8 @@ class twitterExecutor extends Execution {
           if (!err) {
             T.post('media/metadata/create', meta_params, (err, data, response) => {
               if (!err) {
-                let params = { status: params.status, media_ids: [mediaIdStr] };
-                T.post('statuses/update', params, (err, data, response) => {
+                let paramsImg = { status: params.status, media_ids: [mediaIdStr] };
+                T.post('statuses/update', paramsImg, (err, data, response) => {
                   callback(err, data, response);
                 });
               } else {
@@ -88,8 +88,8 @@ class twitterExecutor extends Execution {
       } else {
         const endOptions = {
           end: 'end',
-          data_output: data,
-          extra_output: response
+          // data_output: data,
+          // extra_output: response
         };
         _this.end(endOptions);
       }
