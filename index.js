@@ -10,9 +10,9 @@ class twitterExecutor extends Execution {
   }
 
   exec(params) {
-    let _this = this;
+    const _this = this;
 
-    let T = new Twit({
+    const T = new Twit({
       consumer_key: params.consumerKey,
       consumer_secret: params.consumerSecret,
       access_token: params.accessToken,
@@ -20,7 +20,7 @@ class twitterExecutor extends Execution {
       timeout_ms: params.timeoutMs
     });
 
-    let command = params.command;
+    const command = params.command;
 
     switch (command) {
       case 'update':
@@ -37,8 +37,14 @@ class twitterExecutor extends Execution {
         );
         break;
 
+      case 'users':
+        T.get('users/lookup', { user_id: params.user_id }, (err, data, response) => callback(err, data, response));
+        break;
+
       case 'retweet':
-        T.post('statuses/retweet/:id', { id: params.tweet_id }, (err, data, response) => callback(err, data, response));
+        T.post(`statuses/retweet/${id}`, { id: params.tweet_id }, (err, data, response) =>
+          callback(err, data, response)
+        );
         break;
 
       case 'direct':
@@ -81,15 +87,13 @@ class twitterExecutor extends Execution {
         const endOptions = {
           end: 'error',
           messageLog: err,
-          err_output: err,
-          extra_output: response
+          err_output: err
         };
         _this.end(endOptions);
       } else {
         const endOptions = {
           end: 'end',
-          // data_output: data,
-          // extra_output: response
+          data_output: data
         };
         _this.end(endOptions);
       }

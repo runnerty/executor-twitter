@@ -4,14 +4,7 @@
   "definitions": {
     "config": {
       "type": "object",
-      "required": [
-        "id",
-        "type",
-        "consumerKey",
-        "consumerSecret",
-        "accessToken",
-        "accessTokenSecret"
-      ],
+      "required": ["id", "type", "consumerKey", "consumerSecret", "accessToken", "accessTokenSecret"],
       "properties": {
         "id": {
           "type": "string"
@@ -32,7 +25,7 @@
         "accessTokenSecret": {
           "type": "string"
         },
-        "timeoutMs":{
+        "timeoutMs": {
           "type": "number"
         }
       }
@@ -41,11 +34,7 @@
       "oneOf": [
         {
           "type": "object",
-          "required": [
-            "id",
-            "command",
-            "status"
-          ],
+          "required": ["id", "command", "status"],
           "properties": {
             "id": {
               "type": "string"
@@ -60,11 +49,7 @@
         },
         {
           "type": "object",
-          "required": [
-            "id",
-            "command",
-            "query"
-          ],
+          "required": ["id", "command", "query"],
           "properties": {
             "id": {
               "type": "string"
@@ -79,11 +64,7 @@
         },
         {
           "type": "object",
-          "required": [
-            "id",
-            "command",
-            "screen_name"
-          ],
+          "required": ["id", "command", "screen_name"],
           "properties": {
             "id": {
               "type": "string"
@@ -98,11 +79,22 @@
         },
         {
           "type": "object",
-          "required": [
-            "id",
-            "command",
-            "tweet_id"
-          ],
+          "required": ["id", "command", "user_id"],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "command": {
+              "type": "string"
+            },
+            "user_id": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["id", "command", "tweet_id"],
           "properties": {
             "id": {
               "type": "string"
@@ -117,11 +109,7 @@
         },
         {
           "type": "object",
-          "required": [
-            "id",
-            "command",
-            "tweet_id"
-          ],
+          "required": ["id", "command", "screen_name", "textToSend"],
           "properties": {
             "id": {
               "type": "string"
@@ -133,6 +121,18 @@
               "type": "string"
             },
             "textToSend": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["id", "base64"],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "base64": {
               "type": "string"
             }
           }
